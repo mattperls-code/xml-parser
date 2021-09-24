@@ -273,8 +273,14 @@ std::string readFile(std::string path)
 };
 
 int main() {
-  std::string xmlFile = readFile("./test.xml");
-  Node parsed = parse(xmlFile);
-  parsed.print();
+  std::string htmlFile = readFile("./test/test.html");
+  Node parsedHTML = parse(htmlFile);
+  parsedHTML.print();
+  std::string plistFile = readFile("./test/test.plist");
+  Node parsedPlist = parse(plistFile);
+  parsedPlist.print();
+  std::string svgFile = readFile("./test/test.svg");
+  Node parsedSVG = parse(svgFile);
+  parsedSVG.print();
   return 0;
 };
