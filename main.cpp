@@ -13,6 +13,7 @@
 #include <string>
 #include <vector>
 #include <unordered_map>
+#include <fstream>
 
 class ElementNode;
 
@@ -259,10 +260,21 @@ Node parse(std::string xml)
   return root;
 };
 
+std::string readFile(std::string path)
+{
+  std::string fileText;
+  std::string fileLine;
+  std::ifstream file(path);
+  while(getline(file, fileLine))
+  {
+    fileText += fileLine;
+  };
+  return fileText;
+};
+
 int main() {
-  Node parsed = parse(
-    "<html><head><title>My Project</title></head><body><h1 class={\"myClass\"} onClick={doStuff}>Hello World</h1><div id={\"myDiv\"}><div class={\"emptyDiv\"}></div><p key={0}>as easy as</p><p key={1}>123abc</p></div></body></html>"
-  );
+  std::string xmlFile = readFile("./test.xml");
+  Node parsed = parse(xmlFile);
   parsed.print();
   return 0;
 };

@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>My XML Parser Example</title>
+    <meta name={"author"} content={"Matthew Perlman"}></meta>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+    <div class={"myContent"}>
+      <div class={"myEmptyDiv"}></div>
+      <p>As easy as</p>
+      <p>123</p>
+      <section id={"sect1"} class={"myCoolClass"}>
+        <h2>Section 1</h2>
+        <p>
+          Some Info 1
+          <div>A Child Text Node</div>
+        </p>
+      </section>
+      <section id={"sect2"} class={"myCoolClass"}>
+        <h2>Section 2</h2>
+        <p>Some Info 2</p>
+      </section>
+    </div>
+  </body>
+</html>
